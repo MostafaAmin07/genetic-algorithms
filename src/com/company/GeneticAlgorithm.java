@@ -53,12 +53,12 @@ public class GeneticAlgorithm {
             applyMutation(newPopulation);
 //            System.out.println(newPopulation);
             population = newPopulation;
-            yData[i] = Collections.max(getFitness(maxWeight));
+            yData[i] = Collections.max(getFitness(maxWeight)) - FITNESS_CONSTANT;
             xData[i] = i + 1;
         }
         ArrayList<Integer> fitnessValues = getFitness(maxWeight);
 //        System.out.println(population);
-        bestValue = Collections.max(fitnessValues);
+        bestValue = Collections.max(fitnessValues) - FITNESS_CONSTANT;
         bestValueIndex = fitnessValues.indexOf(bestValue);
 //        XYChart chart = QuickChart.getChart("Evolution", "population number", "max value", null, xData, yData);
         //new SwingWrapper(chart).displayChart();
@@ -122,16 +122,11 @@ public class GeneticAlgorithm {
         }
         int maxValue = Collections.max(cumulativeFitness), selectionVariable;
         for (int i = 0; i < POPULATION_SIZE; i++) {
-            if (maxValue > 0) {
-                selectionVariable = random.nextInt(maxValue);
-                for (int j = 1; j < cumulativeFitness.size(); j++) {
-                    if (selectionVariable >= cumulativeFitness.get(j - 1) && selectionVariable < cumulativeFitness.get(j)) {
-                        selected.add(population.get(i));
-                    }
+            selectionVariable = random.nextInt(maxValue);
+            for (int j = 1; j < cumulativeFitness.size(); j++) {
+                if (selectionVariable >= cumulativeFitness.get(j - 1) && selectionVariable < cumulativeFitness.get(j)) {
+                    selected.add(population.get(i));
                 }
-            } else {
-                selected = population;
-                break;
             }
         }
         return selected;
