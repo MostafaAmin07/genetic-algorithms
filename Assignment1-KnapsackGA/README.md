@@ -1,0 +1,1 @@
+This is an assignment for solving the knapsack 0-1 problem with Genetic algorithm 
