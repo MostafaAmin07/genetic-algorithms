@@ -17,12 +17,10 @@ public class GeneticsAlgorithm {
     private Double minimumError;
     private double[] xData, yData;
     private static final int UPPER_BOUND = 10, LOWER_BOUND = -10;
-    private static final int POPULATION_SIZE = 50;
+    private static final int POPULATION_SIZE = 500;
     private static final int MAX_GENERATION = 1000;
-    private static final double B = 1.0;//dependency factor .5 -> 5
-    private static final double CROSSOVER_PROBABILITY = .7;//.4->.7
-    private static final double MUTATION_PROBABILITY = .01;//.001->.1
-//    private static final int FITNESS_CONSTANT = 1;
+    private static final double B = 1.07;//dependency factor .5 -> 5
+    private static final double CROSSOVER_PROBABILITY = .5;//.4->.7
 
     GeneticsAlgorithm() {
         random = new Random();
@@ -56,7 +54,7 @@ public class GeneticsAlgorithm {
 //            ArrayList<ArrayList<Double>> newPopulation = applyCrossover(selected);
             ArrayList<ArrayList<Double>> newPopulation = applyCrossover(selected, numberOfCoff);
             //mutation
-            applyMutation(newPopulation, i);
+            applyMutation(newPopulation, i, numberOfCoff);
 //            System.out.println(newPopulation);
             population = newPopulation;
             yData[i] = 1.0 / Collections.max(getFitness(numberOfCoff));
@@ -67,6 +65,7 @@ public class GeneticsAlgorithm {
         minimumError =  Collections.max(fitnessValues);
         minimumErrorIndex = fitnessValues.indexOf(minimumError);
         minimumError = 1.0 / minimumError;
+        System.out.println(1.0/Collections.max(fitnessValues)+" + "+1.0/Collections.min(fitnessValues));
         //NORMAL PLOT OF VALUE
         XYChart chart = QuickChart.getChart("Evolution", "population number", "max value", null, xData, yData);
         new SwingWrapper(chart).displayChart();
@@ -84,8 +83,8 @@ public class GeneticsAlgorithm {
         int choice;
         for (int i = 0; i < numberOfCoff; i++) {
             choice = random.nextDouble() > .5 ? 1 : -1;
-            chromosome.add(Double.valueOf(choice * random.nextInt(11)));
-//            chromosome.add(choice * 10 * random.nextDouble() + choice);
+//            chromosome.add(Double.valueOf(choice * random.nextInt(11)));
+            chromosome.add(choice * 10 * random.nextDouble() + choice);
         }
         return chromosome;
     }
@@ -124,7 +123,8 @@ public class GeneticsAlgorithm {
         }
 //        System.out.println("-->"+ cumulativeFitness);
         double maxValue = Collections.max(cumulativeFitness), selectionVariable;
-        for (int i = 0; i < POPULATION_SIZE; i++) {
+        selected.add(population.get(fitnessValues.indexOf(Collections.max(fitnessValues))));
+        for (int i = 1; i < POPULATION_SIZE; i++) {
             selectionVariable = random.nextDouble() * maxValue;
             for (int j = 1; j < cumulativeFitness.size(); j++) {
                 if (selectionVariable >= cumulativeFitness.get(j - 1) && selectionVariable < cumulativeFitness.get(j)) {
@@ -141,11 +141,14 @@ public class GeneticsAlgorithm {
         ArrayList<ArrayList<Double>> newPopulation = new ArrayList<>();
         int crossoverPoint;
         for (int i = 0; i < POPULATION_SIZE - 1; i += 2) {
-            crossoverPoint = random.nextInt(parents.size() - 2) + 1;
+            crossoverPoint = random.nextInt(numberOfCoff - 2) + 1;
+//            System.out.println("cross point" + crossoverPoint);
             if (random.nextDouble() <= CROSSOVER_PROBABILITY) {
                 ArrayList<Double> firstChild = new ArrayList<>();
                 ArrayList<Double> secondChild = new ArrayList<>();
                 formulateChildren(parents, i, firstChild, secondChild, numberOfCoff, crossoverPoint);
+//                System.out.println("First Child" + firstChild);
+//                System.out.println("second child"+ secondChild);
                 ArrayList<Pair<ArrayList<Double>, Double>> pickupLine = new ArrayList<>();
                 pickupLine.add(new Pair<>(firstChild, calculateFitness(firstChild, numberOfCoff)));
                 pickupLine.add(new Pair<>(secondChild, calculateFitness(secondChild, numberOfCoff)));
@@ -163,6 +166,11 @@ public class GeneticsAlgorithm {
                         }
                     }
                 });
+//                //TODO print the sort
+//                System.out.println("----------------------");
+//                System.out.println(pickupLine);
+//                System.out.println("----------------------");
+
                 newPopulation.add(pickupLine.get(0).getKey());
                 newPopulation.add(pickupLine.get(1).getKey());
             } else {
@@ -185,11 +193,16 @@ public class GeneticsAlgorithm {
                 firstChild.add(parents.get(parentIndex + 1).get(j));
                 secondChild.add(parents.get(parentIndex).get(j));
             }
+//            System.out.print('%');
         }
     }
 
-    private void applyMutation(ArrayList<ArrayList<Double>> newPopulation, int currentGeneration) {
+    private void applyMutation(ArrayList<ArrayList<Double>> newPopulation, int currentGeneration, int numberOfCoff) {
+        ArrayList<Double> mutated;
         for (int i = 0; i < newPopulation.size(); i++) {
+            mutated = new ArrayList<>();
+            for(int j=0;j<newPopulation.get(i).size();j++)
+                mutated.add(newPopulation.get(i).get(j));
             for (int j = 0; j < newPopulation.get(i).size(); j++) {
                 double delta;
                 if (random.nextBoolean())
@@ -197,8 +210,12 @@ public class GeneticsAlgorithm {
                 else
                     delta = newPopulation.get(i).get(j) - LOWER_BOUND;
                 double power = Math.pow(1 - currentGeneration / MAX_GENERATION, B);
-                newPopulation.get(i).set(j, delta * (1 - Math.pow(random.nextDouble(), power)));
+                mutated.set(j, delta * (1 - Math.pow(random.nextDouble(), power)));
+//                mutated.set(j, newPopulation.get(i).get(j) + delta * (1-Math.pow(random.nextDouble(), power)));
             }
+//            System.out.println(calculateFitness(mutated, numberOfCoff)+" * "+ calculateFitness(newPopulation.get(i), numberOfCoff));
+            if(calculateFitness(mutated, numberOfCoff) > calculateFitness(newPopulation.get(i), numberOfCoff))
+                newPopulation.set(i, mutated);
         }
     }
 

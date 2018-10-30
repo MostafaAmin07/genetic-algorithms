@@ -2,10 +2,8 @@ package com.company;
 
 import javafx.stage.StageStyle;
 import javafx.util.Pair;
-import org.knowm.xchart.QuickChart;
-import org.knowm.xchart.SwingWrapper;
-import org.knowm.xchart.XYChart;
-import org.knowm.xchart.XYSeries;
+import org.knowm.xchart.*;
+import org.knowm.xchart.internal.ChartBuilder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,18 +31,19 @@ public class Main {
             System.out.println("Case: " + index++);
             System.out.println(geneticAlgorithm.getBestSolution());
             System.out.println(geneticAlgorithm.getMinimumError());
-//            plot(geneticAlgorithm.getBestSolution());
-//            ArrayList<Double> coff = new ArrayList<>();
-//            coff.add(0.429163);
-//            coff.add(1.18487);
-//            coff.add(-0.717967);
-//            coff.add(0.0854301);
+            plot(geneticAlgorithm.getBestSolution());
+            ArrayList<Double> coff = new ArrayList<>();
+            coff.add(0.429163);
+            coff.add(1.18487);
+            coff.add(-0.717967);
+            coff.add(0.0854301);
+            System.out.println(calculateFitness(coff, 4));
             System.out.println(calculateFitness(geneticAlgorithm.getBestSolution(), 4));
             points.clear();
             testCases--;
         }
     }
-    
+
     private static void plot(ArrayList<Double> coff){
         int points_size = points.size();
         double[] xPoints = new double[points_size], yPoints = new double[points_size],
@@ -57,8 +56,9 @@ public class Main {
                 yData[i] += coff.get(j) * Math.pow(points.get(i).getKey(), j);
             }
         }
-        XYChart chart = QuickChart.getChart("Equation", "x", "y", "points", xPoints, yPoints);
-        chart.addSeries("Generated", yData);
+        XYChart chart = new XYChartBuilder().build();
+        chart.addSeries("acutual", xPoints, yPoints);
+        chart.addSeries("Generated", xPoints ,yData);
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
         new SwingWrapper(chart).displayChart();
     }
@@ -76,6 +76,6 @@ public class Main {
         for(int i=0;i<points.size();i++){
             sum += Math.pow(yCalculated.get(i) - points.get(i).getValue(), 2);
         }
-        return 1.0 /( value * sum);
+        return value * sum;
     }
 }
