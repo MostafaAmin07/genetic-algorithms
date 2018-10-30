@@ -19,7 +19,7 @@ public class GeneticsAlgorithm {
     private static final int UPPER_BOUND = 10, LOWER_BOUND = -10;
     private static final int POPULATION_SIZE = 50;
     private static final int MAX_GENERATION = 1000;
-    private static final double B = 1.5;//dependency factor .5 -> 5
+    private static final double B = 1.0;//dependency factor .5 -> 5
     private static final double CROSSOVER_PROBABILITY = .7;//.4->.7
     private static final double MUTATION_PROBABILITY = .01;//.001->.1
 //    private static final int FITNESS_CONSTANT = 1;
@@ -59,13 +59,15 @@ public class GeneticsAlgorithm {
             applyMutation(newPopulation, i);
 //            System.out.println(newPopulation);
             population = newPopulation;
-            yData[i] = Collections.max(getFitness(numberOfCoff));
+            yData[i] = 1.0 / Collections.max(getFitness(numberOfCoff));
             xData[i] = i + 1;
         }
         ArrayList<Double> fitnessValues = getFitness(numberOfCoff);
 //        System.out.println(population);
-        minimumError = Collections.max(fitnessValues);
+        minimumError =  Collections.max(fitnessValues);
         minimumErrorIndex = fitnessValues.indexOf(minimumError);
+        minimumError = 1.0 / minimumError;
+        //NORMAL PLOT OF VALUE
         XYChart chart = QuickChart.getChart("Evolution", "population number", "max value", null, xData, yData);
         new SwingWrapper(chart).displayChart();
     }
@@ -110,20 +112,20 @@ public class GeneticsAlgorithm {
         for (int i = 0; i < Main.points.size(); i++) {
             sum += Math.pow(yCalculated.get(i) - Main.points.get(i).getValue(), 2);
         }
-        return value * sum;
+        return 1.0/(value * sum);
     }
 
     private ArrayList<ArrayList<Double>> selectParents(ArrayList<Double> fitnessValues) {
         ArrayList<ArrayList<Double>> selected = new ArrayList<>();
-        ArrayList<Integer> cumulativeFitness = new ArrayList<>();
-        cumulativeFitness.add(0);
+        ArrayList<Double> cumulativeFitness = new ArrayList<>();
+        cumulativeFitness.add(0.0);
         for (int i = 0; i < fitnessValues.size(); i++) {
-            cumulativeFitness.add((int) (cumulativeFitness.get(i) + fitnessValues.get(i)));
+            cumulativeFitness.add(cumulativeFitness.get(i) + fitnessValues.get(i));
         }
 //        System.out.println("-->"+ cumulativeFitness);
-        int maxValue = Collections.max(cumulativeFitness), selectionVariable;
+        double maxValue = Collections.max(cumulativeFitness), selectionVariable;
         for (int i = 0; i < POPULATION_SIZE; i++) {
-            selectionVariable = random.nextInt(maxValue);
+            selectionVariable = random.nextDouble() * maxValue;
             for (int j = 1; j < cumulativeFitness.size(); j++) {
                 if (selectionVariable >= cumulativeFitness.get(j - 1) && selectionVariable < cumulativeFitness.get(j)) {
                     selected.add(population.get(j-1));
@@ -153,11 +155,11 @@ public class GeneticsAlgorithm {
                     @Override
                     public int compare(Pair<ArrayList<Double>, Double> o1, Pair<ArrayList<Double>, Double> o2) {
                         if (o1.getValue() > o2.getValue()) {
-                            return 1;
+                            return -1;
                         } else if (o1.getValue().equals(o2.getValue())) {
                             return 0;
                         } else {
-                            return -1;
+                            return 1;
                         }
                     }
                 });
