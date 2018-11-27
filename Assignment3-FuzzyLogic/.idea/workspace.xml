@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7539d73-9b4f-492e-9e99-734ab1b94607" name="Default Changelist" comment="" />
+    <list default="true" id="c7539d73-9b4f-492e-9e99-734ab1b94607" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/FuzzyLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/FuzzySet$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/FuzzySet$Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/FuzzySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/FuzzySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3-FuzzyLogic/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FuzzySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FuzzySet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Premiss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Premise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Variable.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +52,59 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="44931055">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="5579" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="5579" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+            <state relative-caret-position="66">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Rule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,29 +113,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Rule.java">
+        <entry file="file://$PROJECT_DIR$/src/FuzzyLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="1166">
+              <caret line="72" column="72" lean-forward="true" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#calculateRule#0;class#Rule#0" />
+                <element signature="method#FuzzyLogic#0;class#FuzzyLogic#0" />
+                <element signature="method#FuzzyLogic#1;class#FuzzyLogic#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Premiss.java">
+        <entry file="file://$PROJECT_DIR$/src/Premise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            <state relative-caret-position="334">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
               <folding>
-                <element signature="method#Premiss#0;class#Premiss#0" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#775#776#0" expanded="true" />
+                <element signature="e#877#878#0" expanded="true" />
+                <element signature="e#936#937#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1132#1133#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,24 +148,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Variable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="298">
+              <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Variable#0;class#Variable#0" />
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#853#854#0" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1140#1141#0" expanded="true" />
-                <element signature="method#AddFuzzySet#0;class#Variable#0" />
+                <element signature="method#Variable#1;class#Variable#0" />
               </folding>
             </state>
           </provider>
@@ -113,11 +161,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FuzzySet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="21" selection-end-line="81" selection-end-column="79" />
+            <state relative-caret-position="416">
+              <caret line="126" column="15" lean-forward="true" selection-start-line="126" selection-start-column="15" selection-end-line="130" selection-end-column="7" />
               <folding>
-                <element signature="method#FuzzySet#0;class#FuzzySet#0" />
-                <element signature="method#FuzzySet#0;class#FuzzySet#0" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,19 +182,26 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>a</find>
+      <find>system.out.println(&quot;R</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/Premis.java" />
+        <option value="$PROJECT_DIR$/src/Premiss.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/FuzzySet.java" />
+        <option value="$PROJECT_DIR$/src/Premise.java" />
         <option value="$PROJECT_DIR$/src/Variable.java" />
-        <option value="$PROJECT_DIR$/src/Premiss.java" />
         <option value="$PROJECT_DIR$/src/Rule.java" />
+        <option value="$PROJECT_DIR$/src/FuzzyLogic.java" />
       </list>
     </option>
   </component>
@@ -158,17 +212,18 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
+    <option name="x" value="-7" />
+    <option name="width" value="695" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,14 +240,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543081799045" />
-    <property name="last_opened_file_path" value="F:/program source/Java/Libraries/xchart-3.5.2/xchart-3.5.2.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543340375915" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -239,26 +294,30 @@
       <updated>1543060524716</updated>
       <workItem from="1543060530011" duration="752000" />
       <workItem from="1543064464401" duration="12647000" />
+      <workItem from="1543150292642" duration="9589000" />
+      <workItem from="1543235897778" duration="4751000" />
+      <workItem from="1543241703896" duration="6977000" />
+      <workItem from="1543330818782" duration="2867000" />
+      <workItem from="1543336717200" duration="3604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13399000" />
+    <option name="totallyTimeSpent" value="41187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.098335855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1429652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.114754096" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23442623" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,7 +325,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -287,8 +347,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="66">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -297,60 +357,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FuzzySet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="21" selection-end-line="81" selection-end-column="79" />
+        <state relative-caret-position="416">
+          <caret line="126" column="15" lean-forward="true" selection-start-line="126" selection-start-column="15" selection-end-line="130" selection-end-column="7" />
           <folding>
-            <element signature="method#FuzzySet#0;class#FuzzySet#0" />
-            <element signature="method#FuzzySet#0;class#FuzzySet#0" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Premise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+        <state relative-caret-position="298">
+          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Variable#0;class#Variable#0" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="method#AddFuzzySet#0;class#Variable#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Premiss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <element signature="method#Premiss#0;class#Premiss#0" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
+            <element signature="method#Variable#1;class#Variable#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="378">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#calculateRule#0;class#Rule#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FuzzyLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1166">
+          <caret line="72" column="72" lean-forward="true" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FuzzyLogic#0;class#FuzzyLogic#0" />
+            <element signature="method#FuzzyLogic#1;class#FuzzyLogic#0" />
           </folding>
         </state>
       </provider>

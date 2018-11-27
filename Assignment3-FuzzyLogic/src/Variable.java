@@ -1,18 +1,15 @@
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Variable {
-//    public enum Type{
-//        Input,
-//        Output
-//    }
     private String name;
-//    private Type type;
     private ArrayList<Pair<FuzzySet, Double>> fuzzySets;
     private Double crisp;
 
     public Variable() {
+        fuzzySets = new ArrayList<>();
     }
 
     public Variable(String name,/* Type type,*/ ArrayList<Pair<FuzzySet, Double>> fuzzySets, Double crisp) {
@@ -30,14 +27,6 @@ public class Variable {
         this.name = name;
     }
 
-//    public Type getType() {
-//        return type;
-//    }
-//
-//    public void setType(Type type) {
-//        this.type = type;
-//    }
-
     public ArrayList<Pair<FuzzySet, Double>> getFuzzySets() {
         return fuzzySets;
     }
@@ -54,23 +43,55 @@ public class Variable {
         this.crisp = crisp;
     }
 
-    public void AddFuzzySet(FuzzySet fuzzySet){
-        fuzzySets.add(new Pair<>(fuzzySet, fuzzySet.intersectionPoint(crisp)));
+    public void constructVariable(Scanner input, Boolean isOutput){
+//        System.out.println("Variable Name");
+        name = input.next();
+        if(!isOutput) {
+//            System.out.println("Crisp Value");
+            crisp = input.nextDouble();
+        }
+        else {
+            crisp = 0.0;
+        }
+//        System.out.println("Number of Fuzzy sets");
+        Integer numberOfFuzzySets = input.nextInt();
+        for(int i=0;i<numberOfFuzzySets;i++){
+            FuzzySet temp = new FuzzySet();
+            temp.constructFuzzySet(input);
+            if(!isOutput) {
+                fuzzySets.add(new Pair<>(temp, temp.intersectionPoint(crisp)));
+            }
+            else{
+                fuzzySets.add(new Pair<>(temp, 0.0));
+            }
+        }
     }
 
     public Double getFuzzySetValue(String fuzzySet){
-        Double value=0.0;
-        for(int i=0;i<fuzzySets.size();i++){
-            if(fuzzySets.get(i).getKey().getName().equals(fuzzySet)){
-                value = fuzzySets.get(i).getValue();
-            }
-        }
-        return value;
+        return getFuzzySetPair(fuzzySet).getValue();
     }
 
     public Double getFuzzySetValue(String fuzzySet, Double value){
-        Double centroid = 0.0;
         //TODO calculate centroid
+        Pair<FuzzySet, Double> pairTempHolder = getFuzzySetPair(fuzzySet);
+        Double centroid = pairTempHolder.getKey().calculateCentroid();
         return value * centroid;
     }
+
+    public Pair<FuzzySet, Double> getFuzzySetPair(String fuzzySetName){
+        for(int i=0;i<fuzzySets.size();i++){
+            if(fuzzySets.get(i).getKey().getName().equals(fuzzySetName)){
+                return fuzzySets.get(i);
+            }
+        }
+        return null;
+    }
+
+//    @Override
+//    public String toString() {
+//        String fuzzification = name +" "+ crisp + "\n\t";
+//        for(int i=0;i<fuzzySets.size();i++)
+//            fuzzification += (fuzzySets.get(i).getKey().toString() + "\n\tValue" + fuzzySets.get(i).getValue() + "\n\t");
+//        return fuzzification;
+//    }
 }

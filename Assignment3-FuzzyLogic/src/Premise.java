@@ -1,12 +1,12 @@
-public class Premiss {
+public class Premise {
     private Variable variable;
     private String fuzzySet;
     private Double value;
 
-    public Premiss() {
+    public Premise() {
     }
 
-    public Premiss(Variable variable, String fuzzySet) {
+    public Premise(Variable variable, String fuzzySet) {
         this.variable = variable;
         this.fuzzySet = fuzzySet;
         this.value = value;
@@ -32,14 +32,26 @@ public class Premiss {
         return value;
     }
 
-    public void setValue(){
+    public Double getValueForOutput() {
+        return variable.getFuzzySetValue(fuzzySet, value);
+    }
+
+    /**
+     * For inputPremisses when having no initial value
+     **/
+    public void setValue() {
         value = variable.getFuzzySetValue(fuzzySet);
     }
 
-    public void setValue(Double result, Boolean isOutputPremiss){
-        if(isOutputPremiss)
-            value = variable.getFuzzySetValue(fuzzySet, result);
-        else
-            value = result;
+    /**
+     * For input and outputPremisses using the value result
+     **/
+    public void setValue(Double result) {
+        value = result;
+    }
+
+    @Override
+    public String toString() {
+        return variable.getName()+" = "+value+" "+fuzzySet;
     }
 }
